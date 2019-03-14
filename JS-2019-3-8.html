@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ESS ECMAScript是一个语言标准，JavaScript是完全基于ECMAScript实现的脚本语言
+        //ES5是ECMAScript5的简写，当前主流版本ES5，ES6
+        //ES5标准下，没有块级作用域
+       /* if(true){
+            var usename="zhangsan";//变量提前为全局变量，但是赋值在表达式内完成
+        }
+        console.log(usename);
+        for(var i=0;i<7;i++){
+
+        }
+        console.log(i);*/
+        //严格模式 ,对所有的页面js代码用严格模式
+       // 'use strict'
+       /* function fn1(){
+            'use strict'//函数内用严格模式
+        }
+        function fn2(){
+            usename="zhangsan";
+        }
+        fn2();
+        console.log(usename);//非严格模式下不使用var声明变量，则变量自动提升为全局变量
+        //严格模式的影响：全局变量需要显示声明；对this的影响表示为指向的改变；
+        禁止删除不可改变的属性和未定义变量；禁止函数参数重名*/
+        var i=1;
+        function fn3(){
+            console.log(this);//非严格模式普通函数中this指向全局变量widow
+        }
+        fn3();
+        function fn4(){
+            'use strict'
+            console.log(this);//严格模式下，普通函数内this指向undefined
+        }
+        fn4();
+       function jduge(){
+           var result = this===undefined?true:false;
+           return result;
+       }
+       if(jduge()){
+           console.log("严格模式");
+       }
+       else{
+           console.log("非严格模式");
+       }
+       var str="abcdefg";//var strobject=new String(str);
+       str.length=1;//strobject.length=1;
+       console.log(str.length);//console.log((new String(str)).length)
+       var index=1;
+       switch(index){//switch的值和case的值进行全等比较，值和类型要全相等
+           case 1:
+           console.log("星期一");
+           break;
+           case 2:
+           console.log("星期二");
+           break;
+           default:console.log("没有此选项");
+           break;
+       }
+       var obj={"username":"zhangsan","age":20};
+       obj.__proto__.sex="male";
+       console.log(obj.__proto__);
+       for(var i in obj){//for in 可遍历的对象的所有可枚举属性
+           console.log(i);
+           console.log(obj[i]);
+       }
+       var arr1=[1,2,3];
+       for(var j in arr1){//数组不适合用for in 遍历
+           console.log(j);
+       }
+
+    </script>
+</body>
+</html>

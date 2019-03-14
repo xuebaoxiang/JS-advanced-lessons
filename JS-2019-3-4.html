@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1=20;
+        num1.toFixed(2);//转变为指定位数字符串
+
+        /*var num1=20;
+        var numobject=new Number(num1);
+        numobject.toFixed*/
+        var num2=12345.789;
+        num2.toPrecision(1);//转变计数方式，toPrecision(数字位个数)，
+                            //数字位小于整数位时表示成指数形式，大于或等于时 四舍五入
+        "abcde".charAt(2);//返回特定位置的字符
+        //String.fromCharCode(97,98,99);返回处于相应Unicode码的字符
+        //String.CharCodeAt(pos);将在字符串中处于pos位的字符转换为Unicode码输出
+        //slice（起始位置 ，结束位置）将字符串截取   。若截取位置为负数则实际结束位置是字符串长度+截取参数（亦可以倒着截取）
+        //substr(起始位置，截取长度)截取长度可以缺省表示从起始位置到结束
+        //substring(起始位置，结束位置)若起始位置大于截断位置，则两者互换，超出0-长度范围的会被截断。
+        //split(限定字符，限定获取的数组长度)返回数组 split("")返回元素为单个字符的数组，split()返回字符串为元素的数组
+        //trim()去除字符串首尾的空格
+        //concat(str1,str2)将两个字符串拼接成一个新的字符串
+        //toLowerCase()转换为 小写
+        //toUpperCase()转换为 大写
+        //indexof(查找的字符，查找的起始位置)，若查找不到则返回值为-1;
+        //lastindexof(查找的字符，查找的起始位置)返回字符最后一次出现所在的位置
+        Boolean(null)//转化结果为False;
+        
+
+    </script>
+</body>
+</html>
