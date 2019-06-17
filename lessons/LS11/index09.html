@@ -52,7 +52,22 @@
 </div>
 
 <!--IIFE 解决变量共享问题的实例-->
-<script src="js/demo09.js"></script>
+<script src="js/demo09.js">
+    (function(w,d){
+        var spanlist=d.getElementsByTagName('span');
+        var show=d.getElementsByClassName('show');
+        for(var i=0;i<spanlist.length;i++){
+            (function(j){
+                spanlist[i].onclick=function(){
+                show.innerText="导航"+i+"内容";
+            }
+            })(i)
+        }
+
+    })(window,document)
+
+  
+</script>
 
 </body>
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function show(array){
+        var brr=new Array();
+        for(var i in array){
+            switch(typeof(arr[i])){
+                case 'string':
+                    brr[i]=array[i].trim();
+                    break;
+                case 'boolean':
+                    brr[i]=Number(array[i]);
+                    break;
+                case 'number':
+                    brr[i]=array[i].toFixed(2);
+                    break;
+                default:
+                console.log("传入参数类型错误");
+                break;
+            }
+        }
+        console.log(brr);
+
+    }
+    var arr=[" string ",false,22.2,22.5];
+    show(arr);
+    function select(sname){
+        var str="赵钱孙李周吴郑王冯陈楮卫蒋沈韩杨朱秦尤许何吕施张孔曹严华金魏陶姜" ;
+        if(str.indexOf(sname)==0){
+            console.log(str.indexOf(sname)+1);
+            console.log("该姓氏之前姓氏不存在");
+        }
+        else if(str.indexOf(sname)>0){
+            console.log(str.indexOf(sname)+1);
+            var a=str.substr(0,str.indexOf(sname));
+            console.log(a);
+        }
+        else{
+            document.write("该姓氏不存在");
+           
+        }
+    }
+    select("赵");
+    select("周");
+    select("薛");
+</script>
+</html>
